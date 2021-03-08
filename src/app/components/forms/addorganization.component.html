@@ -1,0 +1,25 @@
+<form [formGroup]="addOrgForm" (submit)="addorg()">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="row" *ngIf="errors">
+        <div class="col">
+          <div class="alert alert-danger">
+            <strong>Oops!</strong> You have entered invalid information
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" formControlName="name" class="form-control"/>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <div class="form-group">
+        <label>Details</label>
+        <textarea formControlName="details" class="form-control"></textarea>
+      </div>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+

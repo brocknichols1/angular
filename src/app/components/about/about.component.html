@@ -1,0 +1,21 @@
+
+    <section id="about" class="page-section">
+        <div class="container">
+            <div class="row">
+                <div *ngFor="let about of abouts" class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="service-item">
+                        <div class="icon">
+                            <img src="{{about.img}}">
+                        </div>
+                        <h4 *ngIf="about.title">{{about.title}}</h4>
+                        <div class="line-dec"></div>
+                        <p>{{about.about}}</p>
+                        <div class="primary-blue-button">
+                            <a href="#" class="scroll-link" data-id="contact-us">Continue Reading</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+

@@ -1,0 +1,31 @@
+<form [formGroup]="addUserForm" (submit)="adduser()">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="row" *ngIf="errors">
+        <div class="col">
+          <div class="alert alert-danger">
+            <strong>Oops!</strong> You have entered invalid credentials
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Username</label>
+        <input type="text" formControlName="username" class="form-control"/>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <div class="form-group">
+        <label>Email</label>
+        <input type="text" formControlName="email" class="form-control"/>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" formControlName="password" class="form-control"/>
+      </div>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
