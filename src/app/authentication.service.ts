@@ -93,26 +93,26 @@ export class AuthenticationService {
   }
 
   public register(user: TokenPayload): Observable<any> {
-    return this.http.post(this.baseUrl + "/api/index.php/register", user, {
+    return this.http.post(this.baseUrl + "/api/public/index.php/register", user, {
       headers: {"Content-Type": "application/json"}
     });
   }
 
   public sendEmail(email: MailPayload): Observable<any> {
-    return this.http.post(this.baseUrl + "/api/index.php/email", email, {
+    return this.http.post(this.baseUrl + "/api/public/index.php/email", email, {
       headers: {"Content-Type": "application/json"}
     });
   }
 
   public addOrg(org: OrgPayload): Observable<any> {
-    return this.http.post(this.baseUrl + "/api/index.php/organizations/store", org, {
+    return this.http.post(this.baseUrl + "/api/public/index.php/organizations/store", org, {
       headers: {"Content-Type": "application/json"}
     });
   }
 
   public login(user: TokenPayload): Observable<any> {
     const base = this.http.post(
-      this.baseUrl + "/api/index.php/login",
+      this.baseUrl + "/api/public/index.php/login",
       {
         email: user.email,
         password: user.password,
@@ -135,7 +135,7 @@ export class AuthenticationService {
   }
 
   public profile(): Observable<any> {
-    return this.http.get(this.baseUrl + "/api/index.php/profile", {
+    return this.http.get(this.baseUrl + "/api/public/index.php/profile", {
       headers: {Authorization: "Bearer " + this.getToken()}
     });
   }

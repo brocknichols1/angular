@@ -38,7 +38,7 @@ export class UsersService {
 
   getUsers(id: number): Observable<User> {
     const base = this.http.get(
-      this.baseUrl + '/api/index.php/users/' + id,
+      this.baseUrl + '/api/public/index.php/users/' + id,
       {headers: {'Content-Type': 'application/json'}}
     );
     return base.pipe(

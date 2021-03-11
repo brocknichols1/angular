@@ -38,7 +38,7 @@ export class OrganizationService {
 
   getOrganizations(): Observable<Organization> {
     const base = this.http.get(
-      this.baseUrl + '/api/index.php/organizations',
+      this.baseUrl + '/api/public/index.php/organizations',
       {headers: {'Content-Type': 'application/json'}}
     );
 
