@@ -48,7 +48,7 @@ export class LoginComponent {
     this.errors = false;
     this.auth.login(this.credentials).subscribe(
       () => {
-        this.router.navigateByUrl('/profile');
+        this.router.navigateByUrl('/manage');
       },
       err => {
         this.errors = true;

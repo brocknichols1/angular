@@ -82,16 +82,16 @@ p {
     line-height: 40px;
 }
 
-.navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav>li>a {
+.nichols-header .navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav>li>a {
     text-shadow: none;
 }
 
-.navbar-brand {
+.nichols-header .navbar-brand {
 	line-height: 80px;
 	padding: 0px;
 }
 
-.navbar-nav>li>a {
+.nichols-header .navbar-nav>li>a {
 	color: #fff!important;
 	font-size: 13px;
 	font-weight: 300;
@@ -102,11 +102,11 @@ p {
 	letter-spacing: 0.5px;
 }
 
-.navbar-nav>li {
+.nichols-header .navbar-nav>li {
 	margin-left: 45px;
 }
 
-.header.active .navbar-nav>li>a {
+.header.active .nichols-header .navbar-nav>li>a {
 	font-family: 'Open Sans', arial, sans-serif;
 	font-size: 13px;
 	font-weight: 300;
@@ -126,7 +126,7 @@ p {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 25px;
 	text-transform: uppercase;
-	color: #fff!important;
+	color: #000000;
 	transition: all 0.5s;
 
 }
@@ -323,7 +323,7 @@ bootstrap.min.css:5
 #testimonial {
 	background-color: #f7c552;
 	text-align: center;
-	padding: 100px 0px;
+	padding: 70px 0px 10px 0px;
 }
 
 #testimonial .testimonials-item h4 {
@@ -776,26 +776,6 @@ footer .connect-us ul li a:hover {
 		margin: 15px 0px;
 	}
 
-	#blog .section-heading {
-		text-align: center;
-		padding-top: 100px;
-		padding-bottom: 100px;
-		background-color: rgba(0, 0, 0, 0.5);
-		margin-left: -15px;
-		padding-left: 0vh;
-		margin-right: -15px;
-		padding-right: 0vh;
-		overflow: hidden!important;
-	}
-
-	#blog .section-heading .line-dec {
-		margin: 20px auto 15px auto;
-	}
-
-	#blog .section-heading p {
-		padding: 0px 30px;
-	}
-
 	.tabs {
 		padding: 0px 45px;
 	}
@@ -849,22 +829,22 @@ footer .connect-us ul li a:hover {
 		background-color: rgba(250, 250, 250, 0.95);
 	}
 
-	.navbar-nav {
+	.nichols-header .navbar-nav {
 		margin-top: 0px;
 		margin-bottom: 0px;
 	}
 
-	.navbar-inverse .navbar-nav>li {
+  .nichols-header .navbar-inverse .navbar-nav>li {
 		margin-left: 0px;
 		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 	}
 
-	.navbar-inverse .navbar-nav>li:last-child {
+  .nichols-header .navbar-inverse .navbar-nav>li:last-child {
 		border-bottom: none;
 	}
 
 
-	.navbar-inverse .navbar-nav>li>a {
+  .nichols-header .navbar-inverse .navbar-nav>li>a {
 		font-family: 'Roboto', sans-serif!important;
 		line-height: 55px;
 		color: #343434!important;
@@ -1093,4 +1073,5 @@ ol, li {
 #testimonial_text {
   width:300px;
   margin: auto;
+  padding: 55px;
 }

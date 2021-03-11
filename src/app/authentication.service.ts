@@ -29,7 +29,7 @@ export interface UserDetails {
 }
 
 export interface TokenResponse {
-  token: string;
+  token: any;
 }
 
 export interface OrgPayload {
@@ -53,20 +53,20 @@ export interface TokenPayload {
 
 @Injectable()
 export class AuthenticationService {
-  private token: string;
+  private token: any = Token;
   baseUrl: string = environment.apiUrl;
 
   constructor(private http: HttpClient, private router: Router) {
   }
 
   private saveToken(token: string): void {
-    localStorage.setItem("usertoken", token);
+    localStorage.setItem('usertoken', token);
     this.token = token;
   }
 
   public getToken(): string {
     if (!this.token) {
-      this.token = localStorage.getItem("usertoken");
+      this.token = localStorage.getItem('usertoken');
     }
     return this.token;
   }
@@ -75,11 +75,11 @@ export class AuthenticationService {
     const token = this.getToken();
     let payload;
     if (token) {
-      payload = token.split(".")[1];
+      payload = token.split('.')[1];
       payload = window.atob(payload);
       return JSON.parse(payload);
     } else {
-      return null;
+      return JSON.parse('');
     }
   }
 
@@ -110,28 +110,29 @@ export class AuthenticationService {
     });
   }
 
-  // public login(user: TokenPayload): Observable<any> {
-  //   const base = this.http.post(
-  //     this.baseUrl + "/api/login",
-  //     {
-  //       email: user.email,
-  //       password: user.password,
-  //     },
-  //     {headers: {"Content-Type": "application/json"}}
-  //   );
-  //
-  //   const request = base.pipe(
-  //     map((data: TokenResponse) => {
-  //       if (data.token) {
-  //         this.saveToken(data.token);
-  //       }
-  //       return data;
-  //     })
-  //   );
-  //
-  //   return request;
-  //
-  // }
+  public login(user: TokenPayload): Observable<any> {
+    const base = this.http.post(
+      this.baseUrl + "/api/login",
+      {
+        email: user.email,
+        password: user.password,
+      },
+      {headers: {"Content-Type": "application/json"}}
+    );
+
+    // @ts-ignore
+    const request = base.pipe(
+      map((data: any) => {
+        if (data.token) {
+          this.saveToken(data.token);
+        }
+        return data;
+      })
+    );
+
+    return request;
+
+  }
 
   public profile(): Observable<any> {
     return this.http.get(this.baseUrl + "/api/profile", {

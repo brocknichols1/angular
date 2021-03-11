@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+.modal-backdrop.fade
+{
+  opacity: 0.5;
+}
+.modal-open .modal
+{
+  opacity: 1;
+}
+.login-border
+{
+  border-radius: 10px;
+  border: solid #828282;
+}
+.login-border img {
+  margin-left: 50px;
+}

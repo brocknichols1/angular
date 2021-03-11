@@ -1,1 +1,65 @@
-<p>login works!</p>
+<header class="navbar bg-info fixed-top p-0">
+  <div class="container py-2">
+    <div class="navbar navbar-expand-lg navbar-light w-100">
+      <a href="../" class="navbar-brand"><em>N</em>ichols <em>I</em>nc.</a>
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <div class="col text-right">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="fa-arrow-circle-left"></div>
+<div class="container py-5">
+  <div class="row mt-5">
+    <div class="col d-flex flex-row justify-content-center align-content-center pt-5 pb-5">
+      <div class="glyphicon-log-in login-border">
+        <div class="card-body">
+          <img class="mb-4" src="../../assets/img/nicholsInc.jpg" alt="" width="243" height="151">
+          <form (submit)="login()">
+            <h5 class="card-title">Login</h5>
+            <p class="card-text">Please login below to manage your Nichols Inc. account</p>
+            <div class="row">
+              <div class="col">
+                <div class="alert-success">
+                  <p><strong>For admin login use:</strong><br>
+                    Email: admin@admin.com<br>
+                    Password: admin
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="row" *ngIf="errors">
+              <div class="col">
+                <div class="alert alert-danger">
+                  Please check your credentials and try again
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label for="email">Email address</label>
+                  <input type="email" id="email" placeholder="Email" class="form-control"
+                         [(ngModel)]="credentials.email" [ngModelOptions]="{standalone: true}"/>
+                </div>
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" id="password" placeholder="Password" class="form-control"
+                         [(ngModel)]="credentials.password" [ngModelOptions]="{standalone: true}"/>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col d-flex flex-row justify-content-center align-content-center">
+                <button type="submit" class="btn btn-primary col-12">Login</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

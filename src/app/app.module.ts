@@ -13,14 +13,15 @@ import { ContactComponent } from './components/contact/contact.component';
 import { FeedbackComponent } from './components/feedback/feedback.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './login/login.component';
-
-import {EmailComponent} from './components/email/email.component';
-import { AddorganizationComponent } from './components/forms/addorganization.component';
 import { AdduserComponent } from './components/forms/adduser.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { GeneralemailComponent } from './components/forms/email/generalemail.component';
+import { ManageComponent } from './components/manage/manage.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'login', component: LoginComponent},
+  {path: 'manage', component: ManageComponent},
 ];
 
 @NgModule({
@@ -33,9 +34,9 @@ const routes: Routes = [
     FooterComponent,
     LoginComponent,
     AdduserComponent,
-    EmailComponent,
-    AddorganizationComponent,
     AdduserComponent,
+    GeneralemailComponent,
+    ManageComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,8 +44,10 @@ const routes: Routes = [
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
+    NgbModule,
   ],
   providers: [AuthenticationService, AuthGuardService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+
 })
 export class AppModule { }

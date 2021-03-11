@@ -6,20 +6,20 @@ import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {environment} from '../environments/environment.prod';
 
-export interface User {
-  users: any;
+export interface Organization {
+  organizations: any;
   id: number;
-  username: string;
-  email: string;
+  name: string;
+  details: string;
 }
 
 @Injectable({
   providedIn: 'root'
 })
 
-export class UsersService {
-  private accessToken: any;
-  private headers: any;
+export class OrganizationService {
+  private accessToken: string | undefined;
+  private headers: Headers | undefined;
   baseUrl: string = environment.apiUrl;
 
   constructor(
@@ -36,17 +36,24 @@ export class UsersService {
     });
   }
 
-  getUsers(id: number): Observable<User> {
+  getOrganizations(): Observable<Organization> {
     const base = this.http.get(
-      this.baseUrl + '/api/users/' + id,
+      this.baseUrl + '/api/organizations',
       {headers: {'Content-Type': 'application/json'}}
     );
+
     return base.pipe(
-      map((data: any) => {
-        return data.users;
+      map((data: Organization | any) => {
+        return data.organizations;
       })
     );
 
   }
 
+}
+
+export class OrganizationDetails {
+  public id: number | undefined;
+  public name: string | undefined;
+  public details: string | undefined;
 }

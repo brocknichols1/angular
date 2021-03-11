@@ -72,6 +72,7 @@ export class AdduserComponent {
   /**
    * Getter for the form controls
    */
+  // tslint:disable-next-line:typedef
   get controls() {
     return this.addUserForm.controls;
   }
