@@ -25,7 +25,7 @@ export class ContactComponent implements OnInit {
     const modalRef = this.modalService.open(GeneralemailComponent);
 
     modalRef.result.then((data) => {
-      const url = this.baseUrl + '/api/email';
+      const url = this.baseUrl + '/api/index.php/email';
       this.http.post(url,  data,
         {
           headers: {'Content-Type': 'application/json'}

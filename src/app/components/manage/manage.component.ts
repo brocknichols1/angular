@@ -172,7 +172,7 @@ export class ManageComponent {
 
   // tslint:disable-next-line:typedef
   createUser(data: { value: any; }) {
-    const url = this.baseUrl + '/api/users/create';
+    const url = this.baseUrl + '/api/index.php/users/create';
     this.http.post(url, data.value)
       .subscribe((result) => {
         this.ngOnInit(); // reload the table
@@ -183,7 +183,7 @@ export class ManageComponent {
 
   // tslint:disable-next-line:typedef
   onSubmit(data: { value: any; }) {
-      const url = this.baseUrl + '/api/profile/update';
+      const url = this.baseUrl + '/api/index.php/profile/update';
       this.http.put(url, data.value)
         .subscribe((result) => {
           this.ngOnInit(); // reload the table
@@ -215,7 +215,7 @@ export class ManageComponent {
 
   // tslint:disable-next-line:typedef
   deleteUser(data: { id: string; }) {
-    const deleteURL = this.baseUrl + '/api/users/delete/' + data.id;
+    const deleteURL = this.baseUrl + '/api/index.php/users/delete/' + data.id;
     this.http.delete(deleteURL)
       .subscribe((results) => {
         this.ngOnInit();
